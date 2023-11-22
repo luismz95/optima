@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="php/save.php"  class="formulario">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" name="nombre" id="nombre">
+            <label for="edad">Edad</label>
+            <input type="text" name="edad" id="edad">
+            <label for="numero">Numero de Teléfono</label>
+            <input type="text" name="numero" id="numero">
+            <label for="email">Correo Electrónico</label>
+            <input type="text" name="email" id="email">
+
+            <label for="cars">Auto de interés:</label>
+            <select name="cars" id="cars">
+                <option value="null" selected disabled>Seleccione uno</option>
+                <option value="kia">Kia</option>
+                <option value="ford">Ford</option>
+                <option value="nissan">Nissan</option>
+            </select>
+
+            <label for="models" name="modelSelected">Modelo de interés:</label>
+            <select id="models"></select>
+            <br><br>
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
