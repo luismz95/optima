@@ -8,14 +8,14 @@ $nombre = $_GET['nombre'];
 $edad = $_GET['edad'];
 $numero = $_GET['numero'];
 $email = $_GET['email'];
-$modelSelected = "ok";
+$modelSelected = $_GET['modelSelected'];
 
 try {
     // Query para actualizar
     $query = "UPDATE registros SET
                 nombre = '$nombre',
                 edad = '$edad',
-                numero = '$numero',
+                telefono = '$numero',
                 email = '$email',
                 modelo = '$modelSelected'
               WHERE id = $id";
@@ -32,9 +32,9 @@ try {
 }
 
 ?>
-<!-- 
+
 
 <script>
   // Redirect to index.html using JavaScript
   window.location.href = "../registros.php";
-</script> -->
+</script>

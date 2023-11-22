@@ -27,8 +27,8 @@
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         echo $row['modelo'];
-
         echo "<form action='php/edit.php'  class='formulario'>";
+        echo   " <input type='text' hidden name='id' id='id' value='" . $id . "'>";
         echo "<input type='text' name='nombre' id='nombre' value='" . $row['nombre'] . "'>";
         echo   "<label for='edad'>Edad</label>";
         echo   "<input type='text' name='edad' id='edad' value='" . $row['edad'] . "'>";
