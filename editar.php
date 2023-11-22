@@ -28,7 +28,7 @@
         $row = $result->fetch_assoc();
         echo $row['modelo'];
 
-        echo "<form action='php/save.php'  class='formulario'>";
+        echo "<form action='php/edit.php'  class='formulario'>";
         echo "<input type='text' name='nombre' id='nombre' value='" . $row['nombre'] . "'>";
         echo   "<label for='edad'>Edad</label>";
         echo   "<input type='text' name='edad' id='edad' value='" . $row['edad'] . "'>";

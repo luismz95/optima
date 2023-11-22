@@ -1,17 +1,40 @@
 <?php
-require('bd.php'); // Ajusta la ruta según sea necesario
 
-// Verifica si se proporcionó el ID
-if (isset($_POST['id'])) {
-    $id = $_POST['id'];
+require('bd.php');
 
-    echo $id;
+// Variables
+$id = $_GET['id'];
+$nombre = $_GET['nombre'];
+$edad = $_GET['edad'];
+$numero = $_GET['numero'];
+$email = $_GET['email'];
+$modelSelected = "ok";
 
-    // Puedes redirigir a una página de edición con el ID o realizar otras acciones según tus necesidades
-    //header("Location: ../edit_page.php?id=" . $id); // Cambia 'edit_page.php' según tu estructura
+try {
+    // Query para actualizar
+    $query = "UPDATE registros SET
+                nombre = '$nombre',
+                edad = '$edad',
+                numero = '$numero',
+                email = '$email',
+                modelo = '$modelSelected'
+              WHERE id = $id";
+    
+    $result = mysqli_query($con, $query);
 
-    //exit();
-} else {
-    echo "Error al procesar la solicitud";
+    // Revisamos si se realizó la consulta
+    if (!$result) {
+        die('Query failed...' . mysqli_error($con));
+    }
+
+} catch (Exception $e) {
+    echo $e;
 }
+
 ?>
+<!-- 
+
+<script>
+  // Redirect to index.html using JavaScript
+  window.location.href = "../registros.php";
+</script> -->
